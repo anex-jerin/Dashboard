@@ -11,6 +11,7 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
+
 /* CONFIGURATION */
 
 dotenv.config();
@@ -42,4 +43,4 @@ async function main() {
   }
 }
 
-main()
+main();
