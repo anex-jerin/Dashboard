@@ -11,7 +11,6 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
-
 /* CONFIGURATION */
 
 dotenv.config();
@@ -25,6 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 const PORT = process.env.PORT || 3500;
+
+/* Test*/
+import User from './model/User.js';
+import Product from './model/Product.js';
+import ProductStat from './model/ProductStat.js';
+import { dataUser, dataProduct, dataProductStat } from './data/index.js';
 
 /* ROUTES */
 

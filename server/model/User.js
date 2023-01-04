@@ -22,7 +22,7 @@ const UserSchema = new Schema(
       min: 6,
     },
     city: String,
-    State: String,
+    state: String,
     country: String,
     occupation: String,
     phoneNumber: String,
