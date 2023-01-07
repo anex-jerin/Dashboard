@@ -29,7 +29,8 @@ const PORT = process.env.PORT || 3500;
 import User from './model/User.js';
 import Product from './model/Product.js';
 import ProductStat from './model/ProductStat.js';
-import { dataUser, dataProduct, dataProductStat } from './data/index.js';
+import Transction from './model/Transaction.js';
+import { dataUser, dataProduct, dataProductStat,dataTransaction } from './data/index.js';
 
 /* ROUTES */
 
