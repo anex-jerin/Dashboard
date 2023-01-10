@@ -9,7 +9,7 @@ import {
 } from '@mui/x-data-grid';
 import FlexBetween from './FlexBetween';
 
-const DataGridCustomToolbar = ({ serachInput, setSearchInput, setSearch }) => {
+const DataGridCustomToolbar = ({ searchInput, setSearchInput, setSearch }) => {
   return (
     <GridToolbarContainer>
       <FlexBetween width='100%'>
@@ -23,13 +23,13 @@ const DataGridCustomToolbar = ({ serachInput, setSearchInput, setSearch }) => {
             label='Search..'
             sx={{ mb: '0.5rem', width: '15rem' }}
             onChange={(e) => setSearchInput(e.target.value)}
-            value={serachInput}
+            value={searchInput}
             InputProps={{
               endAdornment: (
                 <InputAdornment position='end'>
                   <IconButton
                     onClick={() => {
-                      setSearch(serachInput);
+                      setSearch(searchInput);
                       setSearchInput('');
                     }}
                   >

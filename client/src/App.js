@@ -9,7 +9,7 @@ import Layout from './components/Layout'
 import Products from './components/Products.js'
 import Customers from './components/Customers';
 import Transactions from './components/Transactions';
-
+import Geography from './components/Geography.js'
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -22,9 +22,10 @@ function App() {
             <Route element={<Layout />}>
               <Route path='/' element={<Navigate to='/dashboard' replace />} />
               <Route path='/dashboard' element={<Dashboard />} />
-              <Route path='/products' element={<Products/>}/>
-              <Route path='/customers' element={<Customers/>}/>
-              <Route path='/transactions' element={<Transactions/>}/>
+              <Route path='/products' element={<Products />} />
+              <Route path='/customers' element={<Customers />} />
+              <Route path='/transactions' element={<Transactions />} />
+              <Route path='/geography' element={<Geography />} />
             </Route>
           </Routes>
         </ThemeProvider>

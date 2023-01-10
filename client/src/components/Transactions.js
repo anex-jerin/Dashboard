@@ -13,7 +13,7 @@ const Transactions = () => {
   const [search, setSearch] = useState('');
 
   const [searchInput, setSearchInput] = useState('');
-  console.log(searchInput)
+  console.log(search)
 
   const { data, isLoading } = useGetTransactionsQuery({
     page,
@@ -87,7 +87,7 @@ const Transactions = () => {
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
-          rows={(data && data.transactions) || {}}
+          rows={(data && data.transactions) || []}
           columns={columns}
           rowCount={(data && data.total) || 0}
           rowsPerPageOptions={[20,50,100]}
