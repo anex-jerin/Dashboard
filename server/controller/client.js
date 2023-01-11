@@ -82,7 +82,6 @@ export const getGeography = async (req, res) => {
         acc[countryIso3] = 0;
       }
       acc[countryIso3]++; 
-      console.log(acc)
       return acc;
      
     }, {});

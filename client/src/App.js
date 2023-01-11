@@ -4,12 +4,13 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { themeSettings } from './theme';
-import Dashboard from './components/Dashboard'
-import Layout from './components/Layout'
-import Products from './components/Products.js'
+import Dashboard from './components/Dashboard';
+import Layout from './components/Layout';
+import Products from './components/Products';
 import Customers from './components/Customers';
 import Transactions from './components/Transactions';
-import Geography from './components/Geography.js'
+import Geography from './components/Geography';
+import Overview from './components/Overview';
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -26,6 +27,7 @@ function App() {
               <Route path='/customers' element={<Customers />} />
               <Route path='/transactions' element={<Transactions />} />
               <Route path='/geography' element={<Geography />} />
+              <Route path='/overview' element={<Overview />} />
             </Route>
           </Routes>
         </ThemeProvider>

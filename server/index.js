@@ -30,7 +30,8 @@ import User from './model/User.js';
 import Product from './model/Product.js';
 import ProductStat from './model/ProductStat.js';
 import Transction from './model/Transaction.js';
-import { dataUser, dataProduct, dataProductStat,dataTransaction } from './data/index.js';
+import OverallStats from './model/overallStats.js';
+import { dataUser, dataProduct, dataProductStat,dataTransaction,dataOverallStat } from './data/index.js';
 
 /* ROUTES */
 
