@@ -34,8 +34,8 @@ const OverviewChart = ({ isDashboard = false, view }) => {
         return { sales: curSales, units: curUnits };
       },
       { sales: 0, units: 0 }
-    )
-    return [[totalSalesLine],[totalUnitsLine]]
+    );
+    return [[totalSalesLine], [totalUnitsLine]];
   }, [data]);
   if (!data || isLoading)
     return (
@@ -46,42 +46,41 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       </Box>
     );
   return (
-    <Box>
       <ResponsiveLine
         data={view === 'sales' ? totalSalesLine : totalUnitsLine}
         theme={{
-                axis: {
-                  domain: {
-                    line: {
-                      stroke: theme.palette.secondary[200],
-                    },
-                  },
-                  legend: {
-                    text: {
-                      fill: theme.palette.secondary[200],
-                    },
-                  },
-                  ticks: {
-                    line: {
-                      stroke: theme.palette.secondary[200],
-                      strokeWidth: 1,
-                    },
-                    text: {
-                      fill: theme.palette.secondary[200],
-                    },
-                  },
-                },
-                legends: {
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
-                },
-                tooltip: {
-                  container: {
-                    color: theme.palette.primary.main,
-                  },
-                },
-              }}
+          axis: {
+            domain: {
+              line: {
+                stroke: theme.palette.secondary[200],
+              },
+            },
+            legend: {
+              text: {
+                fill: theme.palette.secondary[200],
+              },
+            },
+            ticks: {
+              line: {
+                stroke: theme.palette.secondary[200],
+                strokeWidth: 1,
+              },
+              text: {
+                fill: theme.palette.secondary[200],
+              },
+            },
+          },
+          legends: {
+            text: {
+              fill: theme.palette.secondary[200],
+            },
+          },
+          tooltip: {
+            container: {
+              color: theme.palette.primary.main,
+            },
+          },
+        }}
         margin={{ top: 20, right: 50, bottom: 50, left: 70 }}
         xScale={{ type: 'point' }}
         yScale={{
@@ -115,7 +114,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
           tickRotation: 0,
           legend: isDashboard
             ? ''
-            : `Total ${view === 'sales' ? 'Revanue' : 'Units'}`,
+            : `Total ${view === 'sales' ? 'Revenue' : 'Units'}`,
           legendOffset: -60,
           legendPosition: 'middle',
         }}
@@ -158,7 +157,6 @@ const OverviewChart = ({ isDashboard = false, view }) => {
             : undefined
         }
       />
-    </Box>
   );
 };
 

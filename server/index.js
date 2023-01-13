@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 3500;
 import User from './model/User.js';
 import Product from './model/Product.js';
 import ProductStat from './model/ProductStat.js';
-import Transction from './model/Transaction.js';
+import Transaction from './model/Transaction.js';
 import OverallStats from './model/overallStats.js';
 import { dataUser, dataProduct, dataProductStat,dataTransaction,dataOverallStat } from './data/index.js';
 
@@ -44,7 +44,7 @@ async function main() {
   try {
     await mongoose.set('strictQuery', false);
     await mongoose.connect(process.env.MONGO_URL);
-    app.listen(PORT, (req, res) => console.log(`conenected to port ${PORT}`));
+    app.listen(PORT, (req, res) => console.log(`connected to port ${PORT}`));
   } catch (error) {
     console.log(error.message);
   }
