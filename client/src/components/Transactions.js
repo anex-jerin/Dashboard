@@ -13,7 +13,6 @@ const Transactions = () => {
   const [search, setSearch] = useState('');
 
   const [searchInput, setSearchInput] = useState('');
-  console.log(search)
 
   const { data, isLoading } = useGetTransactionsQuery({
     page,

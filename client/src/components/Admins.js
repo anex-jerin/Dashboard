@@ -3,7 +3,7 @@ import { Box,useTheme } from '@mui/material'
 import Header from './pages/Header'
 import { DataGrid } from '@mui/x-data-grid'
 import { useGetAdminsQuery } from '../state/api'
-import CustomColumnMenu from './pages/DataGridCustomColumnMenu.js'
+import CustomColumnMenu from './pages/DataGridCustomColumnMenu'
 
 
 const Admins = () => {
@@ -83,7 +83,7 @@ const Admins = () => {
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
-          rows={data || {}}
+          rows={data || []}
           columns={columns}
           components={{
             ColumnMenu:CustomColumnMenu

@@ -31,7 +31,8 @@ import Product from './model/Product.js';
 import ProductStat from './model/ProductStat.js';
 import Transaction from './model/Transaction.js';
 import OverallStats from './model/overallStats.js';
-import { dataUser, dataProduct, dataProductStat,dataTransaction,dataOverallStat } from './data/index.js';
+import AffiliateStat from './model/AffiliateStat.js';
+import { dataUser, dataProduct, dataProductStat,dataTransaction,dataOverallStat,dataAffiliateStat } from './data/index.js';
 
 /* ROUTES */
 

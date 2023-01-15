@@ -1,14 +1,15 @@
 import React from 'react';
-
-import { useGetCustomersQuery } from '../state/api';
-import Header from './pages/Header';
 import { Box, useTheme } from '@mui/material';
+import Header from './pages/Header';
 import { DataGrid } from '@mui/x-data-grid';
+import { useSelector } from 'react-redux';
+import { useGetPerformanceQuery } from '../state/api';
+import CustomColumnMenu from './pages/DataGridCustomColumnMenu';
 
-const Customers = () => {
+const Performance = () => {
+  const userId = useSelector((state) => state.global.userId);
+  const { data, isLoading } = useGetPerformanceQuery(userId);
   const theme = useTheme();
-  const { data, isLoading } = useGetCustomersQuery();
-
   const columns = [
     {
       field: '_id',
@@ -16,42 +17,32 @@ const Customers = () => {
       flex: 1,
     },
     {
-      field: 'name',
-      headerName: 'Name',
-      flex: 0.5,
-    },
-    {
-      field: 'email',
-      headerName: 'Email',
+      field: 'userId',
+      headerName: 'User ID',
       flex: 1,
     },
     {
-      field: 'phoneNumber',
-      headerName: 'Phone Number',
-      flex: 0.5,
-      renderCell: (params) => {
-        return params.value.replace(/^(\d{3})(\d{3})(\d{4})/, '($1)$2-$3');
-      },
-    },
-    {
-      field: 'country',
-      headerName: 'Country',
-      flex: 0.4,
-    },
-    {
-      field: 'occupation',
-      headerName: 'Occupation',
+      field: 'createdAt',
+      headerName: 'Created At ',
       flex: 1,
     },
     {
-      field: 'role',
-      headerName: 'Role',
+      field: 'products',
+      headerName: 'No. of Products',
       flex: 0.5,
+      sortable: false,
+      renderCell: (params) => params.value.length,
+    },
+    {
+      field: 'cost',
+      headerName: 'Cost',
+      flex: 1,
+      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },
   ];
   return (
     <Box m='1.5rem 2.5rem'>
-      <Header title='CUSTOMERS' subTitle='List of customers' />
+      <Header title='PERFORMANCE' subTitle='Track your sales' />
       <Box
         mt='40px'
         height='75vh'
@@ -75,20 +66,23 @@ const Customers = () => {
             color: theme.palette.secondary[100],
             borderTop: 'none',
           },
-          '& .MuiDataGrid-footerContainer .MuiButton-text':{
-            color:`${theme.palette.secondary[200]} !important`
-          }
+          '& .MuiDataGrid-footerContainer .MuiButton-text': {
+            color: `${theme.palette.secondary[200]} !important`,
+          },
         }}
       >
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
-          rows={data || {}}
+          rows={(data && data.sales) || []}
           columns={columns}
+          components={{
+            ColumnMenu: CustomColumnMenu,
+          }}
         />
       </Box>
     </Box>
   );
 };
 
-export default Customers;
+export default Performance;

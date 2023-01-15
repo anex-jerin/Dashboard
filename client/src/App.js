@@ -15,6 +15,7 @@ import Daily from './components/Daily';
 import Monthly from './components/Monthly';
 import Breakdown from './components/Breakdown';
 import Admin from './components/Admins';
+import Performance from './components/Performance'
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
               <Route path='/daily' element={<Daily />} />
               <Route path='/monthly' element={<Monthly />} />
               <Route path='/breakdown' element={<Breakdown />} />
-              <Route path='/admin' element={<Admin />} />
+              <Route path='/admin' element={<Admin />} /> 
+              <Route path='/performance' element={<Performance />} /> 
             </Route>
           </Routes>
         </ThemeProvider>
