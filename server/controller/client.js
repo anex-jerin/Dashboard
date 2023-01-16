@@ -20,7 +20,6 @@ export const getProducts = async (req, res) => {
     );
     res.status(200).json(productsWithStats);
   } catch (error) {
-    console.log(error.message);
     res.status(404).json({ message: error.message });
   }
 };
@@ -30,7 +29,6 @@ export const getCustomers = async (req, res) => {
     const customer = await User.find({ role: 'user' }).select('-password');
     res.status(200).json(customer);
   } catch (error) {
-    console.log(error.message);
     res.status(404).json({ message: error.message });
   }
 };
@@ -67,7 +65,6 @@ export const getTransactions = async (req, res) => {
       total,
     });
   } catch (error) {
-    console.log(error.message);
     res.status(404).json({ message: error.message });
   }
 };
@@ -93,7 +90,6 @@ export const getGeography = async (req, res) => {
 
     res.status(200).json(formattedLocations);
   } catch (error) {
-    console.log(error);
     res.status(404).json({ message: error.message });
   }
 };
