@@ -16,6 +16,7 @@ const Geography = () => {
         height='75vh'
         border={`1px solid ${theme.palette.secondary[200]}`}
         borderRadius='4px'
+        sx={{backgroundColor:theme.palette.primary[300]}}
       >
         {data ? (
           <>
@@ -50,7 +51,7 @@ const Geography = () => {
                 },
                 tooltip: {
                   container: {
-                    color: theme.palette.primary.main,
+                    color: theme.palette.secondary[100],
                   },
                 },
               }}
@@ -83,7 +84,7 @@ const Geography = () => {
                     {
                       on: 'hover',
                       style: {
-                        itemTextColor: theme.palette.background.alt,
+                        itemTextColor: theme.palette.secondary[200],
                         itemOpacity: 1,
                       },
                     },

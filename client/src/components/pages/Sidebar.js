@@ -133,7 +133,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display='flex' alignItems='center' gap='0.5rem'>
                   <Typography variant='h4' fontWeight='bold'>
-                    ECOMVISION
+                    YOURDASH
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -167,7 +167,7 @@ const Sidebar = ({
                             : 'transparent',
                         color:
                           active === lcText
-                            ? theme.palette.primary[600]
+                            ? theme.palette.primary[500]
                             : theme.palette.secondary[100],
                       }}
                       onClick={() => {

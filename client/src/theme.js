@@ -2,44 +2,44 @@
 // color design tokens export
 export const tokensDark = {
   grey: {
-    0: "#ffffff", // manually adjusted
-    10: "#f6f6f6", // manually adjusted
-    50: "#f0f0f0", // manually adjusted
-    100: "#e0e0e0",
-    200: "#c2c2c2",
-    300: "#a3a3a3",
-    400: "#858585",
-    500: "#666666",
-    600: "#525252",
-    700: "#3d3d3d",
-    800: "#292929",
-    900: "#141414",
-    1000: "#000000", // manually adjusted
+    0: '#ffffff', 
+    10: '#f6f6f6', 
+    50: '#f0f0f0', 
+    100: '#e0e0e0',
+    200: '#c2c2c2',
+    300: '#a3a3a3',
+    400: '#858585',
+    500: '#666666',
+    600: '#525252',
+    700: '#3d3d3d',
+    800: '#292929',
+    900: '#141414',
+    1000: '#000000', 
   },
   primary: {
     // blue
-    100: "#d3d4de",
-    200: "#a6a9be",
-    300: "#7a7f9d",
-    400: "#4d547d",
-    500: "#21295c",
-    600: "#191F45", // manually adjusted
-    700: "#141937",
-    800: "#0d1025",
-    900: "#070812",
+    100: '#0a192f',
+    200: '#233044',
+    300: '#3b4759',
+    400: '#545e6d',
+    500: '#6c7582',
+    600: '#858c97', 
+    700: '#9da3ac',
+    800: '#b6bac1',
+    900: '#ced1d5',
   },
   secondary: {
-    // yellow
-    50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
+    //orange
+    50: '#ff7974', 
+    100: '#ffcdcb',
+    200: '#ff5851',
+    300: '#ff8a85',
+    400: '#ff9b97',
+    500: '#ffaca8',
+    600: '#ff8a85',
+    700: '#ff6962',
+    800: '#ff6962',
+    900: '#ffeeee',
   },
 };
 
@@ -82,8 +82,8 @@ export const themeSettings = (mode) => {
               main: tokensDark.grey[500],
             },
             background: {
-              default: tokensDark.primary[600],
-              alt: tokensDark.primary[500],
+              default: tokensDark.primary[200],
+              alt: tokensDark.primary[100],
             },
           }
         : {
