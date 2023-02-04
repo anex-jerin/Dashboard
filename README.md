@@ -1,5 +1,5 @@
 # Dashboard
-### A web app for user friendly dashboard at glance, Easily track your Customers. Monitor and analyze Daily, Monthly, Yearly sales
+### A web app for user friendly dashboard at glance
 
 ## Table of contents
 * [General info](#general-info)
@@ -7,7 +7,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is simple Dashboard.
+This project is simple user friendly dashboard, Easily track your Customers. Monitor and analyze Daily, Monthly, Yearly sales 
 	
 ## Technologies
 Project is created with:
